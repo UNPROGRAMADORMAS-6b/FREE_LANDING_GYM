@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAX-GYM | Header</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* RESET Y VARIABLES */
+:root {
+    --dark-main: #121417; /* Fondo oscuro profundo */
+    --orange-bright: #FF4D00; /* Naranja vibrante */
+    --orange-glow: rgba(255, 77, 0, 0.15); /* Resplandor suave */
+}
+
+body {
+    background-color: var(--dark-main);
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+.fw-black { font-weight: 900; }
+.text-orange { color: var(--orange-bright) !important; }
+
+/* HEADER Y FONDO CON GRADIENTE (Efecto Brillo en la esquina) */
+.hero-header {
+    background: radial-gradient(circle at 80% 10%, var(--orange-glow) 0%, rgba(18, 20, 23, 0) 50%),
+                linear-gradient(180deg, #1A1E21 0%, #121417 100%);
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* NAVBAR */
+.btn-login-custom {
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-login-custom:hover {
+    background: white;
+    color: black !important;
+}
+
+/* HERO TEXTS */
+.hero-title {
+    font-size: clamp(3.5rem, 10vw, 6rem); /* Responsive font size */
+    letter-spacing: -2px;
+}
+
+.hero-paragraph {
+    max-width: 500px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* BOTONES HERO */
+.btn-orange-filled {
+    background-color: var(--orange-bright);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-orange-filled:hover {
+    background-color: #e64500;
+    transform: translateY(-2px);
+}
+
+.btn-outline-orange {
+    border: 2px solid var(--orange-bright);
+    color: white;
+    background: transparent;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-outline-orange:hover {
+    background-color: var(--orange-bright);
+    transform: translateY(-2px);
+}
+
+/* IMAGE WRAPPER Y BADGE */
+.hero-image-wrapper {
+    position: relative;
+    padding-left: 10%;
+}
+
+.open-24h-badge {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--orange-bright);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 5;
+    line-height: 1.1;
+}
+
+.open-24h-badge .small-txt { font-weight: 700; font-size: 1rem; }
+.open-24h-badge .big-txt { font-weight: 900; font-size: 2.5rem; }
+
+.image-frame {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #222;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .hero-container { padding-top: 20px; }
+    .hero-image-wrapper { padding-left: 0; margin-top: 40px; }
+    .open-24h-badge {
+        padding: 12px 10px;
+        left: 5%;
+    }
+    .open-24h-badge .big-txt { font-size: 1.8rem; }
+}
+
+/* SECCIÓN PROGRAM STYLES */
+.program-section {
+    background-color: #121417; /* Mismo fondo que el hero */
+}
+
+.section-title {
+    letter-spacing: 3px;
+    font-size: 2rem;
+}
+
+.program-card {
+    background-color: #1c2024; /* Color grisáceo oscuro de las tarjetas */
+    padding: 35px 25px;
+    border-radius: 4px;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.program-card:hover {
+    background-color: #252a2f;
+    transform: translateY(-5px);
+}
+
+/* Iconos Naranjas */
+.program-icon {
+    width: 40px;
+    height: 40px;
+    filter: invert(34%) sepia(93%) saturate(4593%) hue-rotate(1deg) brightness(103%) contrast(105%);
+    /* Este filtro convierte cualquier icono negro a el naranja #FF4D00 de la imagen */
+}
+
+.join-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.join-link i {
+    color: #FF4D00; /* Naranja de la imagen */
+    transition: 0.3s;
+}
+
+.join-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Ajuste Responsive */
+@media (max-width: 768px) {
+    .program-card {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos para Level Up */
+.bg-orange-gradient {
+    background: linear-gradient(135deg, #ff4d00 0%, #a33100 100%);
+}
+
+.btn-outline-white-custom {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-white-custom:hover {
+    background: white;
+    color: #ff4d00;
+}
+
+/* Estilos para Personal Trainer */
+.bg-dark-main {
+    background-color: #121417;
+}
+
+.letter-spacing-custom {
+    letter-spacing: 4px;
+}
+
+.trainer-img-box {
+    border: 1px solid rgba(255,255,255,0.05);
+    background-color: #1c2024;
+}
+
+.bg-orange-main {
+    background-color: #ff4d00; /* Color exacto de la imagen */
+}
+
+.btn-outline-orange-custom {
+    border: 1px solid #ff4d00;
+    color: white;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-orange-custom:hover {
+    background: #ff4d00;
+}
+
+/* Ajustes de imagen */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .level-up-section .row {
+        flex-direction: column;
+    }
+    .trainer-specialty-card {
+        margin-top: 30px;
+    }
+}
+
+.pricing-section {
+    background-color: var(--dark-pricing-bg);
+}
+
+.pricing-main-title {
+    letter-spacing: 2px;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* EFECTO IPHONE (Primera tarjeta) */
+.iphone-frame {
+    background: #000;
+    padding: 10px;
+    border: 5px solid #222;
+    border-radius: 45px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* TARJETA BASE */
+.price-card {
+    background-color: var(--card-dark);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+}
+
+/* TARJETA PREMIUM (NARANJA) */
+.premium-card {
+    background-color: var(--gym-orange) !important;
+    transform: scale(1.08); /* Sobresale de las demás */
+    z-index: 10;
+    padding: 50px 30px;
+}
+
+.card-divider {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 20px 0;
+}
+
+/* TEXTOS DENTRO DE TARJETAS */
+.plan-label {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.price-val {
+    color: white;
+    font-weight: 900;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.price-val .period {
+    font-size: 1rem;
+    color: var(--gym-orange);
+    font-weight: 400;
+}
+
+.premium-card .price-val .period {
+    color: white;
+}
+
+.plan-desc {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+}
+
+.premium-card .plan-desc {
+    color: rgba(255,255,255,0.8);
+}
+
+/* LISTA DE CARACTERÍSTICAS */
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.plan-features li {
+    color: #888;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features li i {
+    color: var(--gym-orange);
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.premium-card .plan-features li,
+.premium-card .plan-features li i {
+    color: white;
+}
+
+/* BOTONES */
+.btn-outline-white-pricing {
+    border: 1px solid #ff4d00;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.btn-light-pricing {
+    background: #ff4d00;;
+    color: var(--gym-orange);
+    width: 100%;
+    padding: 15px;
+    font-weight: 900;
+    border-radius: 4px;
+    border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .premium-card {
+        transform: scale(1);
+        margin: 20px 0;
+    }
+    .iphone-frame {
+        border: none;
+        padding: 0;
+        background: transparent;
+    }
+}
+
+/* ESTILOS DEL FOOTER */
+.footer-section {
+    background-color: #121417; /* Fondo oscuro que une con la sección anterior */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-text {
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #ff4d00; /* Naranja al pasar el mouse */
+    padding-left: 5px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background: #ff4d00;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-section {
+        text-align: center;
+    }
+    .footer-text {
+        padding-right: 0 !important;
+    }
+    .footer-links {
+        margin-bottom: 30px;
+    }
+    .social-icon {
+        margin: 0 auto;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header class="hero-header overflow-hidden">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent pt-4">
+            <div class="container">
+                <a class="navbar-brand fw-black fs-2" href="#">
+                    MAX-<span class="text-orange">GYM</span>
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#gymNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="gymNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4 text-center">
+                        <li class="nav-item"><a class="nav-link text-white fw-medium active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white fw-medium" href="#">Product</a></li>
+                        <li class="nav-item"><a class="nav-link text-white fw-medium" href="#">Contact</a></li>
+                    </ul>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-login-custom px-4 py-2 fw-bold text-white">Login</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container hero-container py-5">
+            <div class="row align-items-center min-vh-75">
+                
+                <div class="col-lg-6 z-2 text-center text-lg-start">
+                    <h1 class="hero-title fw-black text-white lh-1">
+                        SHAPE YOUR <br>
+                        <span class="text-orange">BODY</span>
+                    </h1>
+                    <p class="hero-paragraph text-secondary my-4 pe-lg-5">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <button class="btn btn-orange-filled px-4 py-3 fw-bold">Learn More</button>
+                        <button class="btn btn-outline-orange px-4 py-3 fw-bold">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0 position-relative">
+                    <div class="hero-image-wrapper">
+                        <div class="open-24h-badge shadow-lg">
+                            <span class="small-txt">OPEN</span><br>
+                            <span class="big-txt">24H</span>
+                        </div>
+                        
+                        <div class="image-frame shadow-2xl">
+                            <img src="https://placehold.co/600x400" alt="Atleta" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="program-section py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title text-white fw-bold">PROGRAM</h2>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="program-card">
+                    <div class="icon-box mb-3">
+                        <i class="bi bi-dumbell-custom"></i> <img src="https://cdn-icons-png.flaticon.com/512/2964/2964514.png" alt="icon" class="program-icon">
+                    </div>
+                    <h5 class="text-white fw-bold mb-3">Strength Training</h5>
+                    <p class="text-secondary small mb-4">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <a href="#" class="join-link">Join Now <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="program-card">
+                    <div class="icon-box mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/10452/10452843.png" alt="icon" class="program-icon">
+                    </div>
+                    <h5 class="text-white fw-bold mb-3">Cardio Training</h5>
+                    <p class="text-secondary small mb-4">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <a href="#" class="join-link">Join Now <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="program-card">
+                    <div class="icon-box mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png" alt="icon" class="program-icon">
+                    </div>
+                    <h5 class="text-white fw-bold mb-3">Health Training</h5>
+                    <p class="text-secondary small mb-4">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <a href="#" class="join-link">Join Now <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="program-card">
+                    <div class="icon-box mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1530/1530863.png" alt="icon" class="program-icon">
+                    </div>
+                    <h5 class="text-white fw-bold mb-3">Shape Body</h5>
+                    <p class="text-secondary small mb-4">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <a href="#" class="join-link">Join Now <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5 px-lg-5">
+            <p class="text-secondary small mx-auto" style="max-width: 700px;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="level-up-section py-5">
+    <div class="container">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-lg-5 bg-orange-gradient p-5 d-flex flex-column justify-content-center">
+                <h2 class="display-5 fw-bold text-white mb-4">READY TO <br> LEVEL UP <br> YOUR BODY</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline-white-custom px-4 py-2">Learn More</button>
+                </div>
+                <p class="text-white-50 small mb-0">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                </p>
+            </div>
+            <div class="col-lg-7">
+                <div class="image-placeholder-bg h-100">
+                    <img src="https://placehold.co/600x400" alt="Training" class="img-fluid h-100 w-100 object-fit-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="trainer-section py-5 bg-dark-main">
+    <div class="container py-5">
+        <h2 class="text-center text-white fw-bold mb-5 letter-spacing-custom">PERSONAL TRAINER</h2>
+        
+        <div class="row g-4 align-items-end">
+            <div class="col-lg-4 col-md-6">
+                <div class="trainer-img-box">
+                    <img src="https://placehold.co/600x400" alt="Trainer" class="img-fluid rounded-1">
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="trainer-specialty-card">
+                    <div class="trainer-img-small mb-0">
+                         <img src="https://placehold.co/600x400" alt="Trainer" class="img-fluid">
+                    </div>
+                    <div class="bg-orange-main p-4">
+                        <h5 class="fw-bold text-white mb-2">Strength Training</h5>
+                        <p class="text-white-50 small mb-0">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 ps-lg-5">
+                <h2 class="display-5 fw-bold text-white mb-4">ABOUT US</h2>
+                <button class="btn btn-outline-orange-custom px-4 py-2 mb-4">Learn More</button>
+                <p class="text-secondary">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pricing-section py-5">
+    <div class="container py-5 text-center">
+        <h2 class="pricing-main-title text-white fw-bold mb-5">SIMPLE, TRANSPARENT PRICING</h2>
+        
+        <div class="row g-0 align-items-center justify-content-center">
+            
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 px-2 order-2 order-lg-1">
+                <div class="iphone-frame">
+                    <div class="price-card basic-card">
+                        <h6 class="plan-label">BASIC PLAN</h6>
+                        <h2 class="price-val">$12 <span class="period">/ Month</span></h2>
+                        <p class="plan-desc">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <ul class="plan-features">
+                            <li><i class="bi bi-check2"></i> All Service With Us</li>
+                            <li><i class="bi bi-check2"></i> All Service With Us</li>
+                            <li><i class="bi bi-check2"></i> All Service With Us</li>
+                            <li><i class="bi bi-check2"></i> All Service With Us</li>
+                            <li><i class="bi bi-check2"></i> All Service With Us</li>
+                            <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        </ul>
+                        <button class="btn btn-outline-white-pricing">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-8 mb-4 mb-lg-0 px-2 order-1 order-lg-2">
+                <div class="price-card premium-card shadow-lg">
+                    <h6 class="plan-label">PREMIUM PLAN</h6>
+                    <hr class="card-divider">
+                    <h2 class="price-val">$20 <span class="period">/ Month</span></h2>
+                    <p class="plan-desc">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <ul class="plan-features">
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                    </ul>
+                    <button class="btn btn-light-pricing">Learn More</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 px-2 order-3 order-lg-3">
+                <div class="price-card pro-card">
+                    <h6 class="plan-label">PRO PLAN</h6>
+                    <h2 class="price-val">$30 <span class="period">/ Month</span></h2>
+                    <p class="plan-desc">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <ul class="plan-features">
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                        <li><i class="bi bi-check2"></i> All Service With Us</li>
+                    </ul>
+                    <button class="btn btn-outline-white-pricing">Learn More</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<footer class="footer-section py-5 mt-auto">
+    <div class="container py-4">
+        <div class="row g-4">
+            
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <a class="navbar-brand fw-black fs-2 text-white mb-3 d-block" href="#">
+                    MAX-<span class="text-orange">GYM</span>
+                </a>
+                <p class="footer-text text-secondary pe-lg-5">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. 
+                    It is a long established fact that a reader will be distracted.
+                </p>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <h6 class="text-white fw-bold mb-4">Program</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Strength Training</a></li>
+                    <li><a href="#">Cardio Training</a></li>
+                    <li><a href="#">Health Training</a></li>
+                    <li><a href="#">Shape Body</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h6 class="text-white fw-bold mb-4">About Us</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Company Info</a></li>
+                    <li><a href="#">Business Area</a></li>
+                    <li><a href="#">Member</a></li>
+                    <li><a href="#">Newsroom</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2">
+                <h6 class="text-white fw-bold mb-4">Contact</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row mt-5 pt-4 border-top border-secondary opacity-50">
+            <div class="col-md-12 text-center">
+                <p class="small text-secondary mb-0">© 2024 MAX-GYM. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</header>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
